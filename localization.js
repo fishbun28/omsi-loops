@@ -7,6 +7,7 @@ const Localization = self["Localization"] = {
     defaultLang: "en-EN",
     supportedLang: {
         "en-EN": "English",
+        "zh-CN": "简体中文",
         //"fr-FR": "Français",
     },
     // key used in the get parameter of the URL to set a specific language
