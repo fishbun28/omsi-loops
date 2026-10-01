@@ -68,7 +68,8 @@ const Localization = self["Localization"] = {
     // lib can be ignored to use the last used lib. returns the texts for the given key as objects
     /** @returns {JQuery<Element>} */
     txtsObj(path, lib) {
-        if (typeof(lib) === "undefined") return $(Localization.libs[Localization.lastLib]).find(path);
+        // default to the active language lib, same as txt() above; lastLib is the fallback (en-EN)
+        if (typeof(lib) === "undefined") lib = "game";
         return $(Localization.libs[lib]).find(path);
     },
     // will update every dom element using the .localized class, with a valid js-data "lockey"
