@@ -108,7 +108,8 @@ class Stat extends Localizable {
 
     /** @param {StatName} name */
     constructor(name) {
-        super(`stats>${name}`);
+        // XML element names are lowercase, but stat names are capitalized
+        super(`stats>${getXMLName(name)}`);
         Object.defineProperty(this, "name", {value: name});
         if (["Str","Dex","Con","Spd","Per"].includes(name)) {
             this.prestigeBuff = "PrestigePhysical";
@@ -243,7 +244,8 @@ class Skill extends Localizable {
 
     /** @param {SkillName} name */
     constructor(name) {
-        super(`skills>${name}`)
+        // XML element names are lowercase, but skill names are capitalized
+        super(`skills>${getXMLName(name)}`)
         Object.defineProperty(this, "name", {value: name});
     }
 
